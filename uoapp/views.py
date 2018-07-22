@@ -67,7 +67,9 @@ class LoginPageView(TemplateView):
 					ln["result"] = "Wrong credentials"
 					return render(request, 'login.html',ln)
 		except Exception as e:
-			print (e)
+			ln = {}
+			ln["result"] = "Oops some error occured"
+			return render(request, 'login.html',ln)
 
 
 class RegisterPageView(TemplateView):
